@@ -33,6 +33,7 @@ export class AddnewbookComponent implements OnInit {
       _id: [null],
       name: [null, [Validators.required]],
       ibn: [null, [Validators.required]],
+      charges:[null, [Validators.required]],
       author: [null, [Validators.required]],
       is_deleted: [false, [Validators.required]],
       image_url: ['']
@@ -107,5 +108,6 @@ interface Books {
   ibn: string;
   image_url: string;
   author: string;
+  charges:string;
   is_deleted: boolean;
 }

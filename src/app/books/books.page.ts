@@ -104,6 +104,7 @@ export class BooksPage implements OnInit {
 interface Books {
   name: string;
   ibn: string;
+  charges: string;
   _id?: string;
   image_url: string;
   author: string;
