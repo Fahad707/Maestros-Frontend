@@ -33,15 +33,17 @@ export class AddnewbookComponent implements OnInit {
       _id: [null],
       name: [null, [Validators.required]],
       ibn: [null, [Validators.required]],
-      charges:[null, [Validators.required]],
       author: [null, [Validators.required]],
       is_deleted: [false, [Validators.required]],
       image_url: ['']
     });
   }
 
-  addNew() {
-    this.booksService.addNewBook(this.addNewBookForm.value).subscribe(
+  async addNew() {
+    const observable = await this.booksService.addNewBook(
+      this.addNewBookForm.value
+    );
+    observable.subscribe(
       async data => {
         console.log('got response from server', data);
         const name = this.addNewBookForm.controls['name'].value;
@@ -58,12 +60,18 @@ export class AddnewbookComponent implements OnInit {
       },
       error => {
         this.loading = false;
+        this.modalCtrl.dismiss();
+
         console.log('error', error);
       }
     );
   }
-  updateBook() {
-    this.booksService.updateBook(this.addNewBookForm.value).subscribe(
+  async updateBook() {
+    const observable = await this.booksService.updateBook(
+      this.addNewBookForm.value
+    );
+
+    observable.subscribe(
       async data => {
         console.log('got response from server', data);
         const name = this.addNewBookForm.controls['name'].value;
@@ -80,6 +88,8 @@ export class AddnewbookComponent implements OnInit {
       },
       error => {
         this.loading = false;
+        this.modalCtrl.dismiss();
+
         console.log('error', error);
       }
     );
@@ -100,14 +110,4 @@ export class AddnewbookComponent implements OnInit {
       dismissed: true
     });
   }
-}
-// Intefacing is Optional
-
-interface Books {
-  name: string;
-  ibn: string;
-  image_url: string;
-  author: string;
-  charges:string;
-  is_deleted: boolean;
 }
