@@ -30,11 +30,7 @@ export class AppComponent {
       url: '/login',
       icon: 'ios-contact'
     },
-    {
-      title: 'Register Service',
-      url: '/register-service',
-      icon: 'ios-contact'
-    }
+    
   ];
 
   constructor(
