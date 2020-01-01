@@ -11,7 +11,7 @@
   <form [formGroup]="addNewBookForm">
     <ion-grid>
       <ion-row color="justify-content-center">
-        <ion-col class="ion-align-self-center" size-md="6" size-lg="5" size-xs="12">
+        <ion-col class="ion-align-self-center" size-md="6" size-lg="6" size-xs="13">
           <div class="ion-text-center">
             <h3 *ngIf="!book">Registergit a New Service</h3>
             <h3 *ngIf="book">Edit Service information</h3>
@@ -39,7 +39,7 @@
             <ion-button size="large" [disabled]="addNewBookForm.invalid" (click)="save()" color="warning" type="submit"
               expand="block">SAVE ! &nbsp;<ion-spinner *ngIf="loading"></ion-spinner>
 
-            </ion-button>
+            </ion-button>git
           </div>
         </ion-col>
       </ion-row>

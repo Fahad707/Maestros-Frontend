@@ -1,7 +1,7 @@
 import { AlertController, ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 
-import { AddnewbookComponent } from './addnewbook/addnewbook.component';
+
 import { BooksService } from '../../sdk/custom/books.service';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/sdk/auth.service';
