@@ -65,7 +65,7 @@ export class BooksPage implements OnInit {
     this.selectedBook = book;
     const alert = await this.alertController.create({
       header: 'Confirm!',
-      message: `Are you sure you want to delete the service "${book.name}" the " ${book.author}"`,
+      message: `Are you sure you want to delete the service of"${book.name}" the " ${book.author}"`,
       buttons: [
         {
           text: 'Cancel',
