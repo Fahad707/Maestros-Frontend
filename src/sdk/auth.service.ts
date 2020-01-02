@@ -4,6 +4,7 @@ import { Storage } from '@ionic/storage';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
   constructor(private storage: Storage) {}
 
